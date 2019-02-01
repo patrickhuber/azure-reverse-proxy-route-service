@@ -21,19 +21,6 @@ This example route service uses the new headers/features that have been added to
 
 ## Environment Variables
 
-### ROUTE_SERVICE_SLEEP_MILLI
-
-If you set this environment variable in the running app, the route service
-will sleep for that many milliseconds before proxying the request. This can
-be used to simulate route services that are slow to respond.
-
-Example (10 seconds):
-
-```sh
-cf set-env logging-route-service ROUTE_SERVICE_SLEEP_MILLI 10000
-cf restage logging-route-service
-```
-
 ### SKIP_SSL_VALIDATION
 
 If you set this environment variable to false, the route service
@@ -45,3 +32,7 @@ Example:
 cf set-env logging-route-service SKIP_SSL_VALIDATION false
 cf restart logging-route-service
 ```
+
+### PORT
+
+The default port for starting this application (this is set by cloud foundry)
