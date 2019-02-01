@@ -19,9 +19,9 @@ func NewReverseProxy(transport http.RoundTripper) http.Handler {
 		Director: func(req *http.Request) {
 			forwardedURL := req.Header.Get(CF_FORWARDED_URL_HEADER)
 
-			originalHost, ok := req.Header[X_ORIGINAL_HOST]
-			if ok {
-				req.Header[X_FORWARDED_HOST] = originalHost
+			originalHost := req.Header.Get(X_ORIGINAL_HOST)
+			if originalHost != "" {
+				req.Header.Set(X_FORWARDED_HOST, originalHost)
 			}
 
 			// Note that url.Parse is decoding any url-encoded characters.
