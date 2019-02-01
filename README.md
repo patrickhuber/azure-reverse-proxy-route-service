@@ -29,8 +29,8 @@ will validate SSL certificates. By default the route service skips SSL validatio
 Example:
 
 ```sh
-cf set-env logging-route-service SKIP_SSL_VALIDATION false
-cf restart logging-route-service
+cf set-env azure-reverse-proxy-route-service SKIP_SSL_VALIDATION false
+cf restart azure-reverse-proxy-route-service
 ```
 
 ### PORT
