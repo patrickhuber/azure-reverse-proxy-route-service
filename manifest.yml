@@ -1,0 +1,6 @@
+---
+applications:
+- buildpack: go_buildpack
+  env:
+    GOVERSION: 1.x
+    GOPACKAGENAME: github.com/patrickhuber/azure-reverse-proxy-route-service
