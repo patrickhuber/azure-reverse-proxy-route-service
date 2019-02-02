@@ -53,6 +53,7 @@ func main() {
 			log.Fatalln(err.Error())
 		}
 		req.URL = url
+		req.Host = url.Host
 	}
 
 	proxy := &httputil.ReverseProxy{Director: director}
