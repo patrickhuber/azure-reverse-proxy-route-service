@@ -7,13 +7,6 @@ import (
 	"net/url"
 )
 
-const (
-	X_FORWARDED_HOST          = "X-Forwarded-Host"
-	X_ORIGINAL_HOST           = "X-Original-Host"
-	CF_FORWARDED_URL_HEADER   = "X-Cf-Forwarded-Url"
-	CF_PROXY_SIGNATURE_HEADER = "X-Cf-Proxy-Signature"
-)
-
 func NewReverseProxy(transport http.RoundTripper) http.Handler {
 	return &httputil.ReverseProxy{
 		Director: func(req *http.Request) {
