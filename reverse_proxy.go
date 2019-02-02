@@ -24,6 +24,7 @@ func NewReverseProxy(transport http.RoundTripper) http.Handler {
 			}
 
 			req.URL = url
+			req.Host = url.Host
 		},
 		Transport: transport,
 	}
